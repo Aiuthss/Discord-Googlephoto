@@ -1,5 +1,7 @@
 # This example requires the 'message_content' intent.
-
+import os
+# secretsに登録した環境変数の呼び出し
+token = os.environ.get("token")
 import discord
 
 intents = discord.Intents.default()
@@ -19,4 +21,4 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
 
-client.run('MTE1MzI1ODQ1MTY1NzU2MDA2NA.GHmRwa.SbLK74UiGPCaadaJeL6zJr4BxnkpIULTYdMZWg')
+client.run(token)
